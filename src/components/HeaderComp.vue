@@ -1,9 +1,11 @@
 <script>
 import NavBar from './NavBar.vue';
+import ControlHealth from './ControlHealth.vue';
 export default {
   name: "HeaderComp",
   components: {
-    NavBar
+    NavBar,
+    ControlHealth
   },
   data() {
     return {
@@ -19,6 +21,7 @@ export default {
 
 <template>
   <NavBar />
+  <ControlHealth />
 </template>
 
 <style lang="scss" scoped></style>

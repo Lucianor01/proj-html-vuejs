@@ -19,6 +19,9 @@ export default {
     <HeaderComp />
 
   </header>
+  <main>
+    <MainComp />
+  </main>
 </template>
 
 <style lang="scss">

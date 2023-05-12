@@ -24,7 +24,7 @@ export default {
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse justify-content-end gap-4" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -42,21 +42,20 @@ export default {
                         <a class="nav-link" href="#">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Store</a>
-                    </li>
-                    <li class="nav-item rounded" id="Nav-New">
-                        <a class="nav-link" href="#">New</a>
+                        <a class="nav-link" href="#">Store
+                            <span class="rounded" id="Nav-New">New</span>
+                        </a>
                     </li>
                 </ul>
-                <div class="nav-item me-2" id="nav-button">
+                <div class="nav-item" id="nav-button">
                     <a href="#" class="text-decoration-none">Schedule a workout</a>
                 </div>
-                <div class="nav-item me-2">
+                <div class="nav-item">
                     <a href="#">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                 </div>
-                <div class="nav-item me-2">
+                <div class="nav-item">
                     <a href="#">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
@@ -73,11 +72,10 @@ nav {
     #navbarSupportedContent {
 
         #Nav-New {
+            padding: 3px 8px;
+            color: #060606;
             background-color: #fff941;
 
-            a {
-                color: #060606;
-            }
         }
 
         #nav-button {

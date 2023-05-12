@@ -1,15 +1,15 @@
 <script>
 
 export default {
-  name: "",
-  data() {
-    return {
+    name: "MainComp",
+    data() {
+        return {
 
-    }
-  },
-  methods: {
+        }
+    },
+    methods: {
 
-  },
+    },
 }
 
 </script>

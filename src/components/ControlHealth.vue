@@ -19,9 +19,9 @@ export default {
         <div class="d-flex container-section-1">
             <div id="container-left" class="container">
                 <div id="text-fitness">
-                    <span>Certified fitness professional</span>
+                    <h1>Certified fitness professional</h1>
                 </div>
-                <h1 class="text-light mt-3">Take control of your health</h1>
+                <h2 class="text-light mt-3">Take control of your health</h2>
                 <img class="mt-3" src="/img/image.png" alt="wave">
                 <div id="text-curabitur" class="mt-3">
                     <span>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus dolor sit amet.</span>
@@ -37,7 +37,24 @@ export default {
                     </a>
                 </div>
             </div>
-            <div class="align-self-center" id="container-right">
+            <div class="align-self-center position-relative" id="container-right">
+                <div id="icon-top" class="d-flex flex-column position-fixed">
+                    <img src="/img/icon.png" alt="icon">
+                    <div>
+                        <span>Demos</span>
+                    </div>
+                </div>
+                <div id="icon-bot" class="position-fixed">
+                    <div id="icon-bot-n">
+                        <div class="float-start">
+                            <span>$</span>
+                        </div>
+                        <h2>39</h2>
+                    </div>
+                    <div>
+                        <span>On Sale</span>
+                    </div>
+                </div>
                 <i class="fa-solid fa-play"></i>
             </div>
         </div>
@@ -60,6 +77,14 @@ export default {
 
         #container-left {
 
+            h1 {
+                font-size: 27px;
+            }
+
+            h2 {
+                font-size: 60px;
+            }
+
             #text-fitness {
                 color: $testo-rosso;
             }
@@ -71,12 +96,12 @@ export default {
             #yt-button {
                 padding: 12px 27px;
                 border-radius: 20px;
-                background-color: #4154fe;
+                background-color: $dodger-blue;
             }
 
             #buy-button {
                 padding: 10px 20px;
-                border: 1px solid #bcbcbc;
+                border: 1px solid $testo-argento;
                 border-radius: 20px;
             }
 
@@ -88,11 +113,59 @@ export default {
 
         }
 
-
-
         #container-right {
 
             width: 25%;
+
+            #icon-top {
+                width: 80px;
+                height: 80px;
+                padding: 8px 6px;
+                align-items: center;
+                border-radius: 10px;
+                right: 10px;
+                top: 120px;
+                background-color: $white;
+
+                img {
+                    width: 45px;
+                }
+
+                span {
+                    font-size: 14px;
+                }
+
+            }
+
+            #icon-bot {
+                width: 80px;
+                height: 80px;
+                padding: 8px 6px;
+                border-radius: 10px;
+                right: 10px;
+                top: 210px;
+                background-color: $white;
+                text-align: center;
+
+                #icon-bot-n {
+
+                    color: $soft-green;
+                    font-size: 15px;
+
+                    .float-start {
+                        margin-left: 6px;
+                        font-size: 18px;
+                    }
+
+                    h2 {
+                        margin-right: 10px;
+                        margin-bottom: 0;
+                    }
+
+                }
+
+            }
+
 
             .fa-play {
                 width: 80px;
@@ -100,7 +173,7 @@ export default {
                 line-height: 78px;
                 border-radius: 50%;
                 text-align: center;
-                background-color: #ffffff;
+                background-color: $white;
                 color: $dodger-blue;
             }
 

@@ -2,12 +2,14 @@
 import { store } from '../store'
 import BestHealth from './BestHealth.vue';
 import FeaturedPlaylist from './FeaturedPlaylist.vue'
+import EmailComp from './EmailComp.vue';
 
 export default {
     name: "MainComp",
     components: {
         BestHealth,
-        FeaturedPlaylist
+        FeaturedPlaylist,
+        EmailComp
     },
     data() {
         return {
@@ -34,6 +36,7 @@ export default {
             </div>
         </div>
     </section>
+    <EmailComp />
 </template>
 
 <style lang="scss" scoped></style>

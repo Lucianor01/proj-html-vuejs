@@ -1,0 +1,6 @@
+@import './variables';
+
+@mixin background-img($index) {
+    background-image: url(map-get($backgrounds, $index));
+    background-size: cover;
+}

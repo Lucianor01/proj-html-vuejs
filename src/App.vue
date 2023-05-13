@@ -1,4 +1,6 @@
 <script>
+import "@fontsource/barlow-semi-condensed"
+import { store } from './store'
 import HeaderComp from './components/HeaderComp.vue'
 import MainComp from './components/MainComp.vue'
 import FooterComp from './components/FooterComp.vue'
@@ -9,7 +11,12 @@ export default {
     HeaderComp,
     MainComp,
     FooterComp
-  }
+  },
+  data() {
+    return {
+      store
+    }
+  },
 }
 
 </script>

@@ -1,10 +1,17 @@
 <script>
+import { store } from '../store'
+import BestHealth from './BestHealth.vue';
+import FeaturedPlaylist from './FeaturedPlaylist.vue'
 
 export default {
     name: "MainComp",
+    components: {
+        BestHealth,
+        FeaturedPlaylist
+    },
     data() {
         return {
-
+            store
         }
     },
     methods: {
@@ -14,6 +21,19 @@ export default {
 
 </script>
 
-<template></template>
+<template>
+    <BestHealth />
+    <section>
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <h2>Featured playlists</h2>
+                <span>View all videos <i class="fa-solid fa-angle-right"></i></span>
+            </div>
+            <div class="row">
+                <FeaturedPlaylist v-for="(elem, index) in store.featuredPlaylist" :key="index" :infoPlaylist="elem" />
+            </div>
+        </div>
+    </section>
+</template>
 
 <style lang="scss" scoped></style>

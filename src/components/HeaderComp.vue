@@ -54,6 +54,8 @@ export default {
 
 #section-header-2 {
 
+  padding-bottom: 10%;
+
   #container-p {
 
     margin-top: 7%;

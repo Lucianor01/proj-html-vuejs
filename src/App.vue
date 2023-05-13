@@ -24,7 +24,6 @@ export default {
 <template>
   <header>
     <HeaderComp />
-
   </header>
   <main>
     <MainComp />

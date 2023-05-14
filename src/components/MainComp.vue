@@ -3,13 +3,14 @@ import { store } from '../store'
 import BestHealth from './BestHealth.vue';
 import FeaturedPlaylist from './FeaturedPlaylist.vue'
 import EmailComp from './EmailComp.vue';
-
+import CardTraining from './CardTraining.vue';
 export default {
     name: "MainComp",
     components: {
         BestHealth,
         FeaturedPlaylist,
-        EmailComp
+        EmailComp,
+        CardTraining
     },
     data() {
         return {
@@ -37,6 +38,29 @@ export default {
         </div>
     </section>
     <EmailComp />
+    <section id="container-section-training">
+        <div class="container-fluid">
+            <div class="row">
+                <CardTraining v-for="(training, index) in store.cardTraining" :key="index" :infoTraining="training" />
+            </div>
+        </div>
+    </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../style/main.scss' as *;
+
+#container-section-training {
+
+    background-color: $cod-gray;
+
+    .container-fluid {
+        padding-top: 7%;
+        padding-right: 7%;
+        padding-bottom: 6%;
+        padding-left: 7%;
+    }
+
+
+}
+</style>

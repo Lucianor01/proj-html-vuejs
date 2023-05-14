@@ -7,6 +7,8 @@ import CardTraining from './CardTraining.vue';
 import LatestArticles from './LatestArticles.vue';
 import SpeechMain from './SpeechMain.vue';
 import CardLink from './CardLink.vue';
+import CrossfitComp from './CrossfitComp.vue';
+
 export default {
     name: "MainComp",
     components: {
@@ -16,7 +18,8 @@ export default {
         CardTraining,
         LatestArticles,
         SpeechMain,
-        CardLink
+        CardLink,
+        CrossfitComp
     },
     data() {
         return {
@@ -70,6 +73,7 @@ export default {
             </div>
         </div>
     </section>
+    <CrossfitComp />
 </template>
 
 <style lang="scss" scoped>

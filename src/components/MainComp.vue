@@ -6,6 +6,7 @@ import EmailComp from './EmailComp.vue';
 import CardTraining from './CardTraining.vue';
 import LatestArticles from './LatestArticles.vue';
 import SpeechMain from './SpeechMain.vue';
+import CardLink from './CardLink.vue';
 export default {
     name: "MainComp",
     components: {
@@ -14,7 +15,8 @@ export default {
         EmailComp,
         CardTraining,
         LatestArticles,
-        SpeechMain
+        SpeechMain,
+        CardLink
     },
     data() {
         return {
@@ -61,6 +63,13 @@ export default {
         </div>
     </section>
     <SpeechMain />
+    <section>
+        <div class="container" id="container-card-link">
+            <div class="row">
+                <CardLink v-for="(link, index) in store.cardLinks" :key="index" :infoLink="link" />
+            </div>
+        </div>
+    </section>
 </template>
 
 <style lang="scss" scoped>
@@ -91,5 +100,12 @@ export default {
 
     }
 
+}
+
+#container-card-link {
+    padding-top: 8%;
+    padding-right: 3%;
+    padding-bottom: 8%;
+    padding-left: 3%;
 }
 </style>

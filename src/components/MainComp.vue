@@ -5,6 +5,7 @@ import FeaturedPlaylist from './FeaturedPlaylist.vue'
 import EmailComp from './EmailComp.vue';
 import CardTraining from './CardTraining.vue';
 import LatestArticles from './LatestArticles.vue';
+import SpeechMain from './SpeechMain.vue';
 export default {
     name: "MainComp",
     components: {
@@ -12,7 +13,8 @@ export default {
         FeaturedPlaylist,
         EmailComp,
         CardTraining,
-        LatestArticles
+        LatestArticles,
+        SpeechMain
     },
     data() {
         return {
@@ -57,8 +59,8 @@ export default {
                 <LatestArticles v-for="(articles, index) in store.latestArticles" :key="index" :infoArticles="articles" />
             </div>
         </div>
-
     </section>
+    <SpeechMain />
 </template>
 
 <style lang="scss" scoped>

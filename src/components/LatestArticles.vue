@@ -36,7 +36,6 @@ export default {
 
     .card-body {
 
-        img {}
 
         a {
             font-size: 28px;

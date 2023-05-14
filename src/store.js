@@ -62,6 +62,24 @@ export const store = reactive(
                 description: 'At laoreet senectus volutpat diam vel sed sed amet pallentesque. Lobortis ut aliaquam risus purus. A tellus ut etiam',
                 link: 'Schedule a wrokout'
             }
-        ]
+        ],
+
+        latestArticles: [
+            {
+                img: '/img/blog4-2x.jpg',
+                title: 'The best protein shake',
+                subTitle: 'By admin | November 26th, 2019 | Gym'
+            },
+            {
+                img: '/img/blog1-2x.jpg',
+                title: 'Ultimate cardio workout',
+                subTitle: 'By admin | November 26th, 2019 | Gym'
+            },
+            {
+                img: '/img/blog3-2x.jpg',
+                title: 'New juices available now',
+                subTitle: 'By admin | November 26th, 2019 | Gym'
+            }
+        ],
     }
 )

@@ -4,13 +4,15 @@ import BestHealth from './BestHealth.vue';
 import FeaturedPlaylist from './FeaturedPlaylist.vue'
 import EmailComp from './EmailComp.vue';
 import CardTraining from './CardTraining.vue';
+import LatestArticles from './LatestArticles.vue';
 export default {
     name: "MainComp",
     components: {
         BestHealth,
         FeaturedPlaylist,
         EmailComp,
-        CardTraining
+        CardTraining,
+        LatestArticles
     },
     data() {
         return {
@@ -28,7 +30,7 @@ export default {
     <BestHealth />
     <section>
         <div class="container">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between align-items-center">
                 <h2>Featured playlists</h2>
                 <span>View all videos <i class="fa-solid fa-angle-right"></i></span>
             </div>
@@ -44,6 +46,18 @@ export default {
                 <CardTraining v-for="(training, index) in store.cardTraining" :key="index" :infoTraining="training" />
             </div>
         </div>
+    </section>
+    <section id="container-section-articles">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Latest articles</h2>
+                <span>Read all articles <i class="fa-solid fa-angle-right"></i></span>
+            </div>
+            <div class="row">
+                <LatestArticles v-for="(articles, index) in store.latestArticles" :key="index" :infoArticles="articles" />
+            </div>
+        </div>
+
     </section>
 </template>
 
@@ -61,6 +75,19 @@ export default {
         padding-left: 7%;
     }
 
+
+}
+
+#container-section-articles {
+
+    .container {
+
+        padding-top: 6%;
+        padding-right: 7%;
+        padding-bottom: 6%;
+        padding-left: 7%;
+
+    }
 
 }
 </style>

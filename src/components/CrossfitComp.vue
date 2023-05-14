@@ -13,7 +13,7 @@ export default {
 <template>
     <section id="section-crossfit">
         <div class="container text-center">
-            <div>
+            <div class="mb-3">
                 <i class="fa-solid fa-play"></i>
             </div>
             <h2>Crossfit workout of the day</h2>

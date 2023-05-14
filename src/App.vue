@@ -28,6 +28,9 @@ export default {
   <main>
     <MainComp />
   </main>
+  <footer>
+    <FooterComp />
+  </footer>
 </template>
 
 <style lang="scss">

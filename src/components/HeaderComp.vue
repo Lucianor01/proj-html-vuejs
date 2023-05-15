@@ -28,10 +28,10 @@ export default {
   <ControlHealth />
   <section id="section-header-2">
     <div class="container">
-      <div class="row justify-content-between" id="container-card">
+      <div class="row justify-content-between" id="container-card" data-aos="fade-up">
         <CardHeader v-for="(elem, index) in store.cardSection_2" :key="index" :infoCard="elem" />
       </div>
-      <div class="text-center text-light" id="container-p">
+      <div class="text-center text-light" id="container-p" data-aos="zoom-in-down">
         <p class="">
           "How you respond to the challenge in the second half will determine what you
           become after

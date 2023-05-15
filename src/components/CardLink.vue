@@ -1,7 +1,18 @@
 <script>
 export default {
     name: "CardLink",
-    props: ['infoLink'],
+    props: ['infoLink', 'infoIndex'],
+    methods: {
+        animation() {
+            if (this.infoIndex == 0) {
+                return "anim-1"
+            } else if (this.infoIndex == 1) {
+                return "anim-2"
+            } else {
+                return "anim-3"
+            }
+        }
+    },
 
 }
 
@@ -9,7 +20,7 @@ export default {
 
 <template>
     <div class="col-3">
-        <div class="card text-center border-0">
+        <div class="card text-center border-0" :data-aos="animation()">
             <img :src="infoLink.img" class="card-img-top mb-2" alt="wave">
             <img class="m-auto" :src="infoLink.waveImg" alt="infoLink.link">
             <div class="card-body">
@@ -24,6 +35,50 @@ export default {
 
 <style lang="scss" scoped>
 @use '../style/main.scss' as *;
+
+[data-aos="anim-1"] {
+    backface-visibility: hidden;
+    transition-property: transform;
+    transform: perspective(2500px) rotateY(-100deg);
+
+    &.aos-animate {
+        transition-duration: 1s;
+        transform: perspective(2500px) rotateY(0);
+    }
+}
+
+[data-aos="anim-2"] {
+    backface-visibility: hidden;
+    transition-property: transform;
+    transform: perspective(2500px) rotateY(-100deg);
+
+    &.aos-animate {
+        transition-duration: 1.5;
+        transform: perspective(2500px) rotateY(0);
+    }
+}
+
+[data-aos="anim-3"] {
+    backface-visibility: hidden;
+    transition-property: transform;
+    transform: perspective(2500px) rotateY(-100deg);
+
+    &.aos-animate {
+        transition-duration: 2s;
+        transform: perspective(2500px) rotateY(0);
+    }
+}
+
+[data-aos="anim-4"] {
+    backface-visibility: hidden;
+    transition-property: transform;
+    transform: perspective(2500px) rotateY(-100deg);
+
+    &.aos-animate {
+        transition-duration: 2.5s;
+        transform: perspective(2500px) rotateY(0);
+    }
+}
 
 .col-3 {
 

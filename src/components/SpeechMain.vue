@@ -12,7 +12,7 @@ export default {
 
 <template>
     <section id="section-Speech">
-        <div class="container-fluid text-center">
+        <div class="container-fluid text-center" data-aos="fade-up">
             <h2 class="mb-3">"I've failed over and over again in my life. And that is why I succeed."</h2>
             <img class="mb-4" src="/img/image-6.png" alt="wave">
             <p class="mb-5">
@@ -71,6 +71,7 @@ export default {
             text-decoration: none;
             color: $white;
             background-color: $dodger-blue;
+            transition: all .3s;
 
             &:hover {
                 background-color: $testo-rosso;

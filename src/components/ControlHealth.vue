@@ -17,7 +17,7 @@ export default {
 <template>
     <section id="section-header-1">
         <div class="d-flex container-section-1">
-            <div id="container-left" class="container">
+            <div id="container-left" class="container" data-aos="fade-down">
                 <div id="text-fitness">
                     <h1>Certified fitness professional</h1>
                 </div>
@@ -58,7 +58,9 @@ export default {
                         <span>On Sale</span>
                     </div>
                 </div>
-                <i class="fa-solid fa-play"></i>
+                <div data-aos="fade-down">
+                    <i class="fa-solid fa-play"></i>
+                </div>
             </div>
         </div>
     </section>
@@ -76,7 +78,10 @@ export default {
 
     .container-section-1 {
 
-        padding: 11% 11%;
+        padding-top: 9%;
+        padding-right: 11%;
+        padding-bottom: 9.5%;
+        padding-left: 11%;
 
         #container-left {
 

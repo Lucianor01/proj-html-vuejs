@@ -1,13 +1,21 @@
 <script>
 export default {
     name: "LatestArticles",
-    props: ['infoArticles'],
+    props: ['infoArticles', 'infoIndex'],
     data() {
         return {
         }
     },
     methods: {
-
+        animation() {
+            if (this.infoIndex == 0) {
+                return "anim-1"
+            } else if (this.infoIndex == 1) {
+                return "anim-2"
+            } else {
+                return "anim-3"
+            }
+        }
     },
 }
 
@@ -15,7 +23,7 @@ export default {
 
 <template>
     <div class="col-4">
-        <div class="card border-0">
+        <div class="card border-0" :data-aos="animation()">
             <div id="img-articles">
                 <div class="position-relative">
                     <img :src="infoArticles.img" class="card-img-top rounded-0" alt="infoArticles.title">
@@ -32,6 +40,42 @@ export default {
 
 <style lang="scss" scoped>
 @use '../style/main.scss' as *;
+
+[data-aos="anim-1"] {
+    transition-property: transform;
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+
+    &.aos-animate {
+        visibility: visible;
+        transition-duration: 2.5s;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+[data-aos="anim-2"] {
+    transition-property: transform;
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+
+    &.aos-animate {
+        visibility: visible;
+        transition-duration: 2s;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+[data-aos="anim-3"] {
+    transition-property: transform;
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+
+    &.aos-animate {
+        visibility: visible;
+        transition-duration: 1.5s;
+        transform: translate3d(0, 0, 0);
+    }
+}
 
 .card {
 

@@ -1,13 +1,21 @@
 <script>
 export default {
     name: "FeaturedPlaylist",
-    props: ['infoPlaylist'],
+    props: ['infoPlaylist', 'infoIndex'],
     data() {
         return {
         }
     },
     methods: {
-
+        animation() {
+            if (this.infoIndex == 0) {
+                return "anim-1"
+            } else if (this.infoIndex == 1) {
+                return "anim-2"
+            } else {
+                return "anim-3"
+            }
+        }
     },
 }
 
@@ -15,9 +23,9 @@ export default {
 
 <template>
     <div class="col-4">
-        <div class="card border-0 text-center">
+        <div class="card border-0 text-center" :data-aos="animation()">
             <div class="position-relative">
-                <img :src="infoPlaylist.img" class="card-img-top" alt="...">
+                <img :src="infoPlaylist.img" class="card-img-top" :alt="infoPlaylist.title">
                 <i class="fa-solid fa-play"></i>
             </div>
             <div class="card-body">
@@ -31,12 +39,50 @@ export default {
 <style lang="scss" scoped>
 @use '../style/main.scss' as *;
 
+[data-aos="anim-1"] {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transform: scale(.6);
+
+    &.aos-animate {
+        opacity: 1;
+        transition-duration: 1s;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+[data-aos="anim-2"] {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transform: scale(.6);
+
+    &.aos-animate {
+        opacity: 1;
+        transition-duration: 1.5s;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+[data-aos="anim-3"] {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transform: scale(.6);
+
+    &.aos-animate {
+        opacity: 1;
+        transition-duration: 1.8s;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
 .col-4 {
 
 
     .card {
 
+
         cursor: pointer;
+
 
         img {
             border-radius: 0px 4px 40px 0px;
@@ -78,6 +124,8 @@ export default {
             }
         }
     }
+
+
 
 }
 </style>

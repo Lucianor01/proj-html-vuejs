@@ -12,7 +12,7 @@ export default {
 
 <template>
     <section id="section-crossfit">
-        <div class="container text-center">
+        <div class="container text-center" data-aos="zoom-in">
             <div class="mb-3">
                 <i class="fa-solid fa-play"></i>
             </div>

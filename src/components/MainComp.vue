@@ -42,7 +42,8 @@ export default {
                 <span>View all videos <i class="fa-solid fa-angle-right"></i></span>
             </div>
             <div class="row">
-                <FeaturedPlaylist v-for="(elem, index) in store.featuredPlaylist" :key="index" :infoPlaylist="elem" />
+                <FeaturedPlaylist v-for="(elem, index) in store.featuredPlaylist" :key="index" :infoPlaylist="elem"
+                    :infoIndex="index" />
             </div>
         </div>
     </section>
@@ -50,7 +51,8 @@ export default {
     <section id="container-section-training">
         <div class="container-fluid">
             <div class="row">
-                <CardTraining v-for="(training, index) in store.cardTraining" :key="index" :infoTraining="training" />
+                <CardTraining v-for="(training, index) in store.cardTraining" :key="index" :infoTraining="training"
+                    :infoIndex="index" />
             </div>
         </div>
     </section>
@@ -61,7 +63,8 @@ export default {
                 <span>Read all articles <i class="fa-solid fa-angle-right"></i></span>
             </div>
             <div class="row">
-                <LatestArticles v-for="(articles, index) in store.latestArticles" :key="index" :infoArticles="articles" />
+                <LatestArticles v-for="(articles, index) in store.latestArticles" :key="index" :infoArticles="articles"
+                    :infoIndex="index" />
             </div>
         </div>
     </section>
@@ -69,7 +72,7 @@ export default {
     <section>
         <div class="container" id="container-card-link">
             <div class="row">
-                <CardLink v-for="(link, index) in store.cardLinks" :key="index" :infoLink="link" />
+                <CardLink v-for="(link, index) in store.cardLinks" :key="index" :infoLink="link" :infoIndex="index" />
             </div>
         </div>
     </section>
@@ -84,7 +87,13 @@ export default {
 
     padding-bottom: 6%;
 
+    h2 {
+        font-size: 27px;
+        font-weight: bold;
+    }
+
     span {
+        transition: all .3s;
 
         &:hover {
             color: $dodger-blue;
@@ -120,7 +129,14 @@ export default {
         padding-bottom: 6%;
         padding-left: 7%;
 
+        h2 {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
         span {
+
+            transition: all .3s;
 
             &:hover {
                 color: $dodger-blue;

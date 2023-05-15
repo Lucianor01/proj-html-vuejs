@@ -17,7 +17,7 @@ export default {
 
 <template>
     <section id="section-email">
-        <div id="container">
+        <div id="container" data-aos="fade-right">
             <h2>Join our mailing list today</h2>
             <h3 class="my-4">Inside offers & flash sales in your inbox every week.</h3>
             <img class="mb-5" src="/img/image.png" alt="image">

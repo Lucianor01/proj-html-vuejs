@@ -17,11 +17,11 @@ export default {
 <template>
     <section id="main-section-1">
         <div class="d-flex justify-content-between">
-            <div class="position-relative">
+            <div class="position-relative" data-aos="fade-right">
                 <img class="img-main-section-1" src="/img/service15-2x.jpg" alt="service 15">
                 <i class="fa-solid fa-play"></i>
             </div>
-            <div id="container-right">
+            <div id="container-right" data-aos="fade-left">
                 <h2 class="mb-3">Tune up your workouts</h2>
                 <h3 class="mb-4">The best health & fitness advice online</h3>
                 <div class="d-flex mb-4">

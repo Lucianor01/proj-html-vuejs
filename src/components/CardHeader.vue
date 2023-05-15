@@ -28,18 +28,20 @@ export default {
 
 .col-4 {
 
-    max-width: 375px;
-    max-height: 413px;
-    margin-top: -6%;
-    padding: 40px;
-    border-radius: 5px;
-
     $keys: map-keys($backgrounds);
 
     @each $position in $keys {
         &:nth-of-type(#{$position}) {
             @include background-img($position);
         }
+    }
+
+    &:hover {
+
+        transform: scale(1.1);
+        box-shadow: 0px 10px 30px 0px hsla(0, 0%, calc(20% - 20%), calc(100% - 40%));
+        cursor: pointer;
+
     }
 
     img {

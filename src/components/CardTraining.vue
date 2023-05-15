@@ -36,6 +36,16 @@ export default {
 
 .col-4 {
 
+    transition: all .3s;
+
+    &:hover {
+
+        transform: scale(1.1);
+        cursor: pointer;
+
+    }
+
+
     .card {
 
         width: 340px;

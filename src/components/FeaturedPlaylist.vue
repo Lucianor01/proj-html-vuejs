@@ -31,32 +31,53 @@ export default {
 <style lang="scss" scoped>
 @use '../style/main.scss' as *;
 
-.card {
+.col-4 {
 
 
-    img {
-        border-radius: 0px 4px 40px 0px;
-    }
+    .card {
 
-    .fa-play {
-        width: 60px;
-        height: 58px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        line-height: 58px;
-        border-radius: 50%;
-        text-align: center;
-        background-color: $white;
-        color: $dodger-blue;
-    }
+        cursor: pointer;
 
-    .card-body {
+        img {
+            border-radius: 0px 4px 40px 0px;
+        }
 
-        h4 {
+        .fa-play {
+            width: 60px;
+            height: 58px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            line-height: 58px;
+            border-radius: 50%;
+            text-align: center;
+            background-color: $white;
             color: $dodger-blue;
+            transition: all .3s;
+
+            &:hover {
+                color: $testo-rosso;
+                cursor: pointer;
+            }
+
+        }
+
+        .card-body {
+
+            h3 {
+                font-size: 23px;
+                font-weight: 500;
+                font-weight: bold;
+            }
+
+            h4 {
+                font-size: 18px;
+                font-weight: bold;
+                color: $dodger-blue;
+            }
         }
     }
+
 }
 </style>

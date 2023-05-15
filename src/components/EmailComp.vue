@@ -72,6 +72,12 @@ export default {
             padding: 10px 80px;
             border-radius: 30px;
             background-color: $dodger-blue;
+
+            &:hover {
+                background-color: $testo-rosso;
+                cursor: pointer;
+            }
+
         }
 
         p {

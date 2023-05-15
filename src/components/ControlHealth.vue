@@ -31,7 +31,7 @@ export default {
                         <i class="fa-brands fa-youtube"></i>
                         Visit my Youtube channel
                     </a>
-                    <a href="#" class="text-light text-decoration-none" id="buy-button">
+                    <a href="#" class="text-decoration-none" id="buy-button">
                         <span>Buy Avada today</span>
                         <i class="fa-solid fa-arrow-right ms-3"></i>
                     </a>
@@ -39,7 +39,10 @@ export default {
             </div>
             <div class="align-self-center position-relative" id="container-right">
                 <div id="icon-top" class="d-flex flex-column position-fixed">
-                    <img src="/img/icon.png" alt="icon">
+                    <div class="position-relative">
+                        <img class="img-before" src="/img/icon.png" alt="icon">
+                        <img class="img-after" src="/img/icon.png" alt="icon">
+                    </div>
                     <div>
                         <span>Demos</span>
                     </div>
@@ -51,7 +54,7 @@ export default {
                         </div>
                         <h2>39</h2>
                     </div>
-                    <div>
+                    <div id="text-sale">
                         <span>On Sale</span>
                     </div>
                 </div>
@@ -73,7 +76,7 @@ export default {
 
     .container-section-1 {
 
-        padding: 7% 11%;
+        padding: 11% 11%;
 
         #container-left {
 
@@ -95,21 +98,34 @@ export default {
 
             #yt-button {
                 padding: 12px 27px;
-                border-radius: 20px;
+                border-radius: 30px;
                 background-color: $dodger-blue;
+                transition: all .3s;
+
+                &:hover {
+                    background-color: $testo-rosso;
+                }
+
             }
 
             #buy-button {
-                padding: 10px 20px;
-                border: 1px solid $testo-argento;
-                border-radius: 20px;
-            }
+                padding: 10px 30px;
+                border: 3px solid #333333;
+                border-radius: 30px;
+                color: $white;
+                transition: all .3s;
 
+                &:hover {
+                    border: 3px solid $white;
+                    color: $cod-gray;
+                    background-color: $white;
+                }
+
+            }
 
             .fa-arrow-right {
                 font-size: 13px;
             }
-
 
         }
 
@@ -118,17 +134,47 @@ export default {
             width: 25%;
 
             #icon-top {
-                width: 80px;
-                height: 80px;
+                width: 70px;
+                height: 70px;
                 padding: 8px 6px;
                 align-items: center;
                 border-radius: 10px;
-                right: 10px;
+                right: 5px;
                 top: 120px;
                 background-color: $white;
+                box-shadow: 0 -5px 20px 5px rgba(0, 0, 0, .15);
+                cursor: pointer;
 
                 img {
-                    width: 45px;
+                    right: 10px;
+                    top: 120px;
+                    width: 35px;
+                    transition: transform 0.3s ease-in-out;
+                }
+
+                .img-before {
+                    transform: translateX(0);
+                }
+
+                .img-after {
+                    position: absolute;
+                    top: 0;
+                    left: 10px;
+                    opacity: 0;
+                    transform: translateX(10px);
+
+                }
+
+                &:hover .img-before {
+                    transform: translateX(-16px);
+                    opacity: 0;
+                }
+
+                &:hover .img-after {
+                    transform: translateX(-10px);
+                    transition: opacity 0.4s cubic-bezier(0.21, 0.6, 0.35, 1),
+                        transform 0.3s ease-in;
+                    opacity: 1;
                 }
 
                 span {
@@ -138,23 +184,32 @@ export default {
             }
 
             #icon-bot {
-                width: 80px;
-                height: 80px;
+
+                width: 70px;
+                height: 70px;
                 padding: 8px 6px;
                 border-radius: 10px;
-                right: 10px;
+                right: 5px;
                 top: 210px;
                 background-color: $white;
                 text-align: center;
+                box-shadow: 0 -5px 20px 5px rgba(0, 0, 0, .15);
+                cursor: pointer;
+
+                &:hover #icon-bot-n {
+                    color: $testo-rosso;
+                }
 
                 #icon-bot-n {
 
                     color: $soft-green;
-                    font-size: 15px;
+                    font-size: 13px;
+                    transition: all .3s;
+
 
                     .float-start {
                         margin-left: 6px;
-                        font-size: 18px;
+                        font-size: 15px;
                     }
 
                     h2 {
@@ -162,6 +217,10 @@ export default {
                         margin-bottom: 0;
                     }
 
+                }
+
+                #text-sale {
+                    margin-top: -3px;
                 }
 
             }
@@ -175,12 +234,17 @@ export default {
                 text-align: center;
                 background-color: $white;
                 color: $dodger-blue;
+                transition: all .3s;
+                cursor: pointer;
+
+                &:hover {
+                    color: $testo-rosso;
+                }
+
             }
 
         }
     }
-
-
 
 }
 </style>

@@ -22,13 +22,13 @@ export default {
                 <i class="fa-solid fa-play"></i>
             </div>
             <div id="container-right">
-                <h2>Tune up your workouts</h2>
-                <h3>The best health & fitness advice online</h3>
-                <div class="d-flex">
+                <h2 class="mb-3">Tune up your workouts</h2>
+                <h3 class="mb-4">The best health & fitness advice online</h3>
+                <div class="d-flex mb-4">
                     <img class="me-2" src="/img/unnamed.jpg" alt="unnamed">
                     <div>
-                        <div>
-                            <span>ThemeFusion</span>
+                        <div class="mb-1">
+                            <span id="theme-fusion">ThemeFusion</span>
                         </div>
                         <div>
                             <a id="yt-channel" href="#" class="text-decoration-none">
@@ -39,11 +39,11 @@ export default {
                         </div>
                     </div>
                 </div>
-                <p>
+                <p class="pb-3">
                     Arcu eu facilisi ut quisque placerat nunc habitant. Magna semper mauris, venenatis leo integer sit
                     pellentesque.
                 </p>
-                <a href="#" class="text-light text-decoration-none me-3" id="yt-button">
+                <a href="#" class="text-light text-decoration-none" id="yt-button">
                     <i class="fa-brands fa-youtube"></i>
                     Visit my Youtube channel
                 </a>
@@ -59,8 +59,7 @@ export default {
 
     .img-main-section-1 {
         margin-top: -6%;
-        width: 100%;
-        max-width: 700px;
+        max-width: 610px;
         border-radius: 0px 4px 40px 0px;
     }
 
@@ -76,13 +75,20 @@ export default {
         text-align: center;
         background-color: $white;
         color: $dodger-blue;
+        transition: all .3s;
+
+        &:hover {
+            color: $testo-rosso;
+            cursor: pointer;
+        }
+
     }
 
     #container-right {
 
         padding-top: 6%;
         padding-right: 10%;
-        padding-bottom: 18%;
+        padding-bottom: 11%;
         padding-left: 10%;
 
         h2 {
@@ -92,13 +98,24 @@ export default {
         }
 
         h3 {
-            font-size: 63px;
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        #theme-fusion {
+            font-size: 13px;
         }
 
         #yt-channel {
             padding: 4px;
             color: $white;
             background-color: $ferrari-red;
+            transition: all .3s;
+
+            &:hover {
+                filter: opacity(60%);
+            }
+
         }
 
         .yt-number {
@@ -114,7 +131,13 @@ export default {
         #yt-button {
             padding: 12px 27px;
             border-radius: 20px;
-            background-color: $ferrari-red
+            background-color: $ferrari-red;
+            transition: all .3s;
+
+            &:hover {
+                filter: opacity(60%);
+            }
+
         }
 
     }

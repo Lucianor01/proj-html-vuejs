@@ -35,9 +35,9 @@ export default {
 
 <template>
     <BestHealth />
-    <section>
+    <section id="section-playlists">
         <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center mb-4">
                 <h2>Featured playlists</h2>
                 <span>View all videos <i class="fa-solid fa-angle-right"></i></span>
             </div>
@@ -78,6 +78,24 @@ export default {
 
 <style lang="scss" scoped>
 @use '../style/main.scss' as *;
+
+
+#section-playlists {
+
+    padding-bottom: 6%;
+
+    span {
+
+        &:hover {
+            color: $dodger-blue;
+            cursor: pointer;
+        }
+
+    }
+
+
+}
+
 
 #container-section-training {
 

@@ -27,26 +27,39 @@ export default {
 
 .col-3 {
 
+    .card {
 
-    .card-img-top {
-        max-width: 156px;
-        margin: auto;
-    }
+        &:hover {
+            cursor: pointer;
+        }
 
-    p {
-        color: $jumbo;
-    }
+        .card-img-top {
+            max-width: 156px;
+            margin: auto;
+        }
 
-    a {
-        font-size: 18px;
-        font-weight: 500;
-        color: $cod-gray;
+        p {
+            color: $jumbo;
+        }
 
-        i {
-            font-size: 14px;
+        a {
+            font-size: 18px;
+            font-weight: bold;
+            color: $cod-gray;
+
+            &:hover {
+                color: $dodger-blue;
+            }
+
+            i {
+                font-size: 14px;
+            }
+
         }
 
     }
+
+
 
 }
 </style>

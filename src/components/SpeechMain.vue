@@ -34,6 +34,10 @@ export default {
     background-repeat: no-repeat;
     background-position: center center;
 
+    &:hover {
+        filter: brightness(1.1);
+    }
+
     .container-fluid {
 
         max-width: 910px;
@@ -67,6 +71,11 @@ export default {
             text-decoration: none;
             color: $white;
             background-color: $dodger-blue;
+
+            &:hover {
+                background-color: $testo-rosso;
+            }
+
         }
 
     }

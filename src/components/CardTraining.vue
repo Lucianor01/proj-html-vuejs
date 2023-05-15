@@ -36,14 +36,6 @@ export default {
 
 .col-4 {
 
-    transition: all .3s;
-
-    &:hover {
-
-        transform: scale(1.1);
-        cursor: pointer;
-
-    }
 
 
     .card {
@@ -57,6 +49,14 @@ export default {
         border-width: 5px;
         border-color: $dodger-blue;
         background-color: $cod-gray;
+        transition: all .3s;
+
+        &:hover {
+
+            transform: scale(1.1);
+            cursor: pointer;
+
+        }
 
         img {
             width: 70px;

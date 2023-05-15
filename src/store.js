@@ -23,7 +23,7 @@ export const store = reactive(
         featuredPlaylist: [
             {
                 img: '/img/video2-2x.jpg',
-                title: 'Thighd & glute workout',
+                title: 'Thighs & glute workout',
                 subTitle: 'Increase your mobility'
             },
             {

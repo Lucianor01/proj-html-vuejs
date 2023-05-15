@@ -120,6 +120,15 @@ export default {
         padding-bottom: 6%;
         padding-left: 7%;
 
+        span {
+
+            &:hover {
+                color: $dodger-blue;
+                cursor: pointer;
+            }
+
+        }
+
     }
 
 }

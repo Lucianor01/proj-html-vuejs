@@ -49,16 +49,24 @@ export default {
             text-align: center;
             background-color: $white;
             color: $dodger-blue;
+
+            &:hover {
+                color: $testo-rosso;
+                cursor: pointer;
+            }
+
         }
 
         h2 {
             font-size: 58px;
             color: $white;
+            font-weight: bold;
         }
 
         h3 {
             font-size: 38px;
             color: $yellow;
+            font-weight: bold;
         }
 
         a {

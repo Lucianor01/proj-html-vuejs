@@ -19,23 +19,33 @@ export default {
     <section id="section-1">
         <div class="container">
             <div class="row">
-                <div class="text-center col-4 container-right">
+                <div class="col-4 text-center container-left">
                     <img class="mb-3" src="/img/logo.png" alt="Logo">
                     <p class="mb-4">
                         Ac aliquam neque sagittis diam faucibus vitae purus turpis phasellus. Pellentesque consectetur amet
                         purus
                         ultrices mauris.
                     </p>
-                    <div id="socials">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="mx-3 fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-youtube"></i>
-                        <i class="mx-3 fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-linkedin"></i>
+                    <div>
+                        <a href="#" class="socials" data-tooltip="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="socials mx-4" data-tooltip="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="socials" data-tooltip="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="socials mx-4" data-tooltip="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="socials" data-tooltip="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="col-4 text-center container-mid">
-                    <h2>Recent Posts</h2>
+                <div class="col-4 text-center  container-mid">
+                    <h2 class="ms-4 mb-5">Recent Posts</h2>
                     <ul>
                         <li class="mb-2">
                             <a href="#">
@@ -69,8 +79,8 @@ export default {
                         </li>
                     </ul>
                 </div>
-                <div class="col-4 text-center container-left">
-                    <h2>Contact informations</h2>
+                <div class="col-4 text-center  container-right">
+                    <h2 class="mb-5">Contact informations</h2>
                     <p>4746 Tipple Road Michigan 48449</p>
                     <span>Mobile: 1.800.000.0000</span>
                     <p>Email: info@your-company.com</p>
@@ -79,13 +89,16 @@ export default {
         </div>
     </section>
     <section id="section-2">
-        <div>
+        <div class="position-relative">
             <p>
                 © Copyright 2012 - 2023 | Avada Theme by
                 <a href="#">ThemeFusion</a>
                 | All Rights Reserved | Powered by
                 <a href="#">WordPress</a>
             </p>
+            <a href="#" id="arrow-up" class="position-fixed">
+                <i class="fa-solid fa-angle-up"></i>
+            </a>
         </div>
     </section>
 </template>
@@ -101,14 +114,41 @@ export default {
     padding-left: 7%;
     background-color: $cod-gray;
 
-    .container-right {
+    .container-left {
+
 
         p {
             color: hsla(0, 0%, 100%, calc(100% - 22%));
+            font-size: 20px;
         }
 
-        #socials {
+        .socials {
+            transition-duration: .2s;
+            transition-timing-function: linear;
             color: $testo-rosso;
+            position: relative;
+
+            &:before {
+                content: attr(data-tooltip);
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 3px 5px;
+                background-color: #353333;
+                border-radius: 4px;
+                display: none;
+                font-size: 11px;
+            }
+
+            &:hover:before {
+                display: block;
+            }
+
+            &:hover {
+                color: rgba(152, 147, 159, 0.64);
+            }
+
         }
 
     }
@@ -119,6 +159,8 @@ export default {
 
         h2 {
             font-size: 23px;
+            text-transform: uppercase;
+            font-weight: bold;
         }
 
         ul {
@@ -127,6 +169,13 @@ export default {
             a {
                 color: $white;
                 text-decoration: none;
+                font-size: 20px;
+                transition-duration: .2s;
+                transition-timing-function: linear;
+
+                &:hover {
+                    color: $dodger-blue;
+                }
 
                 i {
                     font-size: 14px;
@@ -138,15 +187,26 @@ export default {
 
     }
 
-    .container-left {
+    .container-right {
 
         color: $white;
 
+        h2 {
+            font-size: 23px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        span {
+            font-size: 20px;
+        }
 
         p:nth-child(2) {
             color: hsla(0, 0%, 100%, calc(100% - 44%));
-
-
         }
 
     }
@@ -171,7 +231,33 @@ export default {
         a {
             text-decoration: none;
             color: $white;
+            transition-duration: .2s;
+            transition-timing-function: linear;
+
+            &:hover {
+                color: $dodger-blue;
+            }
+
         }
+
+    }
+
+    #arrow-up {
+        padding: 5px 15px;
+        right: 40px;
+        bottom: 0;
+        border-radius: 4px 4px 0 0;
+        color: $white;
+        background-color: #333;
+        z-index: 999;
+        scroll-behavior: smooth;
+
+        &:hover {
+            background-color: $dodger-blue;
+            cursor: pointer;
+        }
+
+
 
     }
 

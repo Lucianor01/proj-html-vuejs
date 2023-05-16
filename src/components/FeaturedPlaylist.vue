@@ -4,6 +4,7 @@ export default {
     props: ['infoPlaylist', 'infoIndex'],
     data() {
         return {
+            videoVisible: false
         }
     },
     methods: {
@@ -15,6 +16,9 @@ export default {
             } else {
                 return "anim-3"
             }
+        },
+        toggleVideo() {
+            this.videoVisible = !this.videoVisible;
         }
     },
 }
@@ -26,7 +30,14 @@ export default {
         <div class="card border-0 text-center" :data-aos="animation()">
             <div class="position-relative">
                 <img :src="infoPlaylist.img" class="card-img-top" :alt="infoPlaylist.title">
-                <i class="fa-solid fa-play"></i>
+                <i v-if="!videoVisible" class="fa-solid fa-play" @click="toggleVideo"></i>
+                <div v-if="videoVisible" class="video-container" data-aos="zoom-out">
+                    <iframe width="415" height="260" :src="infoPlaylist.video" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                    <button class="deactivate-button btn btn-warning" @click="toggleVideo">Deactivate
+                        Video</button>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">{{ infoPlaylist.title }}</h3>
@@ -35,6 +46,7 @@ export default {
         </div>
     </div>
 </template>
+  
 
 <style lang="scss" scoped>
 @use '../style/main.scss' as *;
@@ -101,6 +113,7 @@ export default {
             background-color: $white;
             color: $dodger-blue;
             transition: all .3s;
+            z-index: 22;
 
             &:hover {
                 color: $testo-rosso;
@@ -108,6 +121,29 @@ export default {
             }
 
         }
+
+        .video-container {
+            position: absolute;
+            top: 0;
+
+            .deactivate-button {
+                position: absolute;
+                bottom: -40px;
+                left: 51px;
+                padding: 4px 10px;
+                transform: translate(-50%, -50%);
+                font-size: 12px;
+                transition: all .3s;
+
+                &:hover {
+                    filter: brightness(0.8)
+                }
+
+            }
+
+        }
+
+
 
         .card-body {
 
@@ -124,8 +160,6 @@ export default {
             }
         }
     }
-
-
 
 }
 </style>

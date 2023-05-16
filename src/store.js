@@ -23,16 +23,19 @@ export const store = reactive(
         featuredPlaylist: [
             {
                 img: '/img/video2-2x.jpg',
+                video: 'https://www.youtube.com/embed/6VFLKdfxA24',
                 title: 'Thighs & glute workout',
                 subTitle: 'Increase your mobility'
             },
             {
                 img: '/img/video7-2x.jpg',
+                video: 'https://www.youtube.com/embed/1skBf6h2ksI',
                 title: 'Lift, firm & perk up',
                 subTitle: 'Feel young again'
             },
             {
                 img: '/img/video9-2x.jpg',
+                video: 'https://www.youtube.com/embed/5v1wqxnrmrk',
                 title: 'Slim & trim your waist',
                 subTitle: 'Shed those extra pounds'
             }

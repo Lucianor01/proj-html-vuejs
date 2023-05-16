@@ -1,18 +1,38 @@
 <script>
-
-
 export default {
     name: "EmailComp",
 
     data() {
         return {
+            searchEmail: "",
         }
     },
-    methods: {
 
+    methods: {
+        showPopover() {
+            if (this.searchEmail === "") {
+                this.popoverContent("Email not sent!");
+            } else {
+                this.popoverContent("Email sent successfully!");
+                this.searchEmail = "";
+            }
+        },
+
+        // BOOTSTRAP POPOVER 
+        popoverContent(content) {
+            const subscribeButton = document.getElementById("subscribe");
+            const popover = new bootstrap.Popover(subscribeButton, {
+                content: content,
+                trigger: "manual",
+            });
+            popover.show();
+
+            setTimeout(() => {
+                popover.hide();
+            }, 1500);
+        },
     },
 }
-
 </script>
 
 <template>
@@ -22,8 +42,10 @@ export default {
             <h3 class="my-4">Inside offers & flash sales in your inbox every week.</h3>
             <img class="mb-5" src="/img/image.png" alt="image">
             <div class="d-flex mb-5">
-                <input type="email" class="form-control me-3" id="colFormLabel" placeholder="Insert your email...*">
-                <button type="button" class="btn text-light">Subscribe</button>
+                <input type="email" class="form-control me-3" id="colFormLabel" placeholder="Insert your email...*"
+                    v-model="searchEmail">
+                <input type="submit" value="Submit Now!" class="btn text-light" id="subscribe" data-bs-container="body"
+                    data-bs-toggle="popover" data-bs-trigger="manual" data-bs-placement="top" @click="showPopover">
             </div>
             <p>
                 Curabitur non nulla sit amet nisl tempus convallis quis ac lectus dolor sit amet, consectetur adipiscing
@@ -68,7 +90,7 @@ export default {
             border-radius: 20px;
         }
 
-        button {
+        #subscribe {
             padding: 10px 80px;
             border-radius: 30px;
             background-color: $dodger-blue;
